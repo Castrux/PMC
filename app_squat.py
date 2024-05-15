@@ -1,7 +1,7 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+import dash as html
 import dash_dangerously_set_inner_html
+from dash import html
 import mediapipe as mp
 import SquatPosture as sp
 from flask import Flask, Response
@@ -9,10 +9,13 @@ import cv2
 import tensorflow as tf
 import numpy as np
 from utils import landmarks_list_to_array, label_params, label_final_results
+
+
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
-model = tf.keras.models.load_model("working_model_1")
+model = tf.keras.models.load_model("C:/Users/scast/Downloads/POSTURE/POSTURE/Posture/working_model_1")
+
 
 class VideoCamera(object):
     def __init__(self):
